@@ -1,39 +1,33 @@
-import type { NextPage } from 'next'
-import Image from 'next/image'
+import type { NextPage } from 'next';
+import Image from 'next/image';
 import { useState } from 'react';
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
+import Song from '../pages/components/Song/Song';
+import Audio from '../pages/components/Audio/Audio';
 
-type Song = {
-  id: number;
-  title: string;
-  artist: string;
-  file: string;
-  image: string;
-}
-
-// pour plus tard => aller chercher les morceaux dans une bdd
+// pour plus tard => aller chercher les morceaux dans une db
 
 const SONGS: Song[] = [
   {
     id: 0,
     title: 'Drunk In L.A.',
     artist: 'Beach House',
-    file: 'songs/Beach House - Drunk In L.A.',
-    image: 'covers/beach house 7.jpg',
+    file: 'songs/Beach House - Drunk In L.A..mp3',
+    image: '/covers/beach house 7.jpg',
   },
   {
     id: 1,
     title: 'In The House, In A Hearbeat',
     artist: 'John Murphy',
-    file: 'songs/John Murphy - In The House, In A Heartbeat',
-    image: 'covers/john murphy 28 days later',
+    file: 'songs/John Murphy - In The House, In A Heartbeat.mp3',
+    image: '/covers/john murphy 28 days later.jpg',
   },
   {
     id: 2,
     title: 'Sorry',
     artist: 'Madonna',
-    file: 'songs/Madonna - Sorry',
-    image: 'covers/madonna confessions on a dance floor',
+    file: 'songs/Madonna - Sorry.mp3',
+    image: '/covers/madonna confessions on a dance floor.jpg',
   }
 ]
 
@@ -63,3 +57,5 @@ const Home: NextPage<{ songs: Song[] }> = ({ songs }) => {
 }
 
 export default Home
+
+// based on this tuto https://www.youtube.com/watch?v=nczamFOtdnI&t=1998s
